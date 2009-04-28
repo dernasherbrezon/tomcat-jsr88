@@ -44,38 +44,38 @@ public class OperationsTest
 	@Test
 	public void testDistributeStartStopUndeploy() throws Exception
 	{
-		ProgressObject result = manager.distribute(manager.getTargets(), new File("sample-webapp.war"), null);
+		ProgressObject result = manager.distribute(manager.getTargets(), new File("./src/test/resources/sample-webapp.war"), null);
 		System.out.println("deploy result:");
 		System.out.println(result.getDeploymentStatus().getMessage());
 		System.out.println(result.getResultTargetModuleIDs()[0].getModuleID());
 		System.out.println(result.getResultTargetModuleIDs()[0].getWebURL());
 		System.out.println(result.getDeploymentStatus().isCompleted());
-//		result = manager.start(result.getResultTargetModuleIDs());
-//		System.out.println("start result:");
-//		System.out.println(result.getDeploymentStatus().getMessage());
-//		System.out.println(result.getResultTargetModuleIDs()[0].getModuleID());
-//		System.out.println(result.getResultTargetModuleIDs()[0].getWebURL());
-//		System.out.println(result.getDeploymentStatus().isCompleted());
-//		result = manager.stop(result.getResultTargetModuleIDs());
-//		System.out.println("stop result:");
-//		System.out.println(result.getDeploymentStatus().getMessage());
-//		System.out.println(result.getResultTargetModuleIDs()[0].getModuleID());
-//		System.out.println(result.getResultTargetModuleIDs()[0].getWebURL());
-//		System.out.println(result.getDeploymentStatus().isCompleted());
-//		
-//		result = manager.redeploy(result.getResultTargetModuleIDs(), new File("sample-webapp-2.war"), null);
-//		System.out.println("redeploy result:");
-//		System.out.println(result.getDeploymentStatus().getMessage());
-//		System.out.println(result.getResultTargetModuleIDs()[0].getModuleID());
-//		System.out.println(result.getResultTargetModuleIDs()[0].getWebURL());
-//		System.out.println(result.getDeploymentStatus().isCompleted());
-//		
-//		result = manager.undeploy(result.getResultTargetModuleIDs());
-//		System.out.println("undeploy result:");
-//		System.out.println(result.getDeploymentStatus().getMessage());
-//		System.out.println(result.getResultTargetModuleIDs()[0].getModuleID());
-//		System.out.println(result.getResultTargetModuleIDs()[0].getWebURL());
-//		System.out.println(result.getDeploymentStatus().isCompleted());
+		result = manager.start(result.getResultTargetModuleIDs());
+		System.out.println("start result:");
+		System.out.println(result.getDeploymentStatus().getMessage());
+		System.out.println(result.getResultTargetModuleIDs()[0].getModuleID());
+		System.out.println(result.getResultTargetModuleIDs()[0].getWebURL());
+		System.out.println(result.getDeploymentStatus().isCompleted());
+		result = manager.stop(result.getResultTargetModuleIDs());
+		System.out.println("stop result:");
+		System.out.println(result.getDeploymentStatus().getMessage());
+		System.out.println(result.getResultTargetModuleIDs()[0].getModuleID());
+		System.out.println(result.getResultTargetModuleIDs()[0].getWebURL());
+		System.out.println(result.getDeploymentStatus().isCompleted());
+		
+		result = manager.redeploy(result.getResultTargetModuleIDs(), new File("./src/test/resources/sample-webapp-2.war"), null);
+		System.out.println("redeploy result:");
+		System.out.println(result.getDeploymentStatus().getMessage());
+		System.out.println(result.getResultTargetModuleIDs()[0].getModuleID());
+		System.out.println(result.getResultTargetModuleIDs()[0].getWebURL());
+		System.out.println(result.getDeploymentStatus().isCompleted());
+		
+		result = manager.undeploy(result.getResultTargetModuleIDs());
+		System.out.println("undeploy result:");
+		System.out.println(result.getDeploymentStatus().getMessage());
+		System.out.println(result.getResultTargetModuleIDs()[0].getModuleID());
+		System.out.println(result.getResultTargetModuleIDs()[0].getWebURL());
+		System.out.println(result.getDeploymentStatus().isCompleted());
 	}
 
 	@Before
