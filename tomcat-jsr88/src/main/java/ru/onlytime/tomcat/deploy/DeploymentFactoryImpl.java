@@ -9,14 +9,14 @@ import javax.enterprise.deploy.spi.factories.DeploymentFactory;
 
 public class DeploymentFactoryImpl implements DeploymentFactory
 {
-	private final static String URI_PREFIX = "deployer:org.onlytime.tomcat:";
+	private final static String URI_PREFIX = "deployer:ru.onlytime.tomcat:";
 	private final static Pattern appPattern = Pattern.compile(URI_PREFIX + "(\\w+):(\\d+)");
 
 	public DeploymentManager getDeploymentManager(String uri, String login, String password) throws DeploymentManagerCreationException
 	{
 		Matcher m = appPattern.matcher(uri);
 		if (!m.find()) {
-			throw new DeploymentManagerCreationException("wrong uri. example: deployer:org.onlytime.tomcat:localhost:8080");
+			throw new DeploymentManagerCreationException("wrong uri. example: deployer:ru.onlytime.tomcat:localhost:8080");
 		}
 		String host = m.group(1);
 		String portStr = m.group(2);
