@@ -1,4 +1,4 @@
-package org.onlytime.tomcat.deploy.spi;
+package ru.onlytime.tomcat.deploy.spi;
 
 import javax.enterprise.deploy.spi.Target;
 import javax.enterprise.deploy.spi.TargetModuleID;
