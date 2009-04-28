@@ -1,4 +1,4 @@
-package org.onlytime.tomcat.deploy.tests;
+package ru.onlytime.tomcat.deploy.tests;
 
 import java.io.File;
 
@@ -8,7 +8,8 @@ import javax.enterprise.deploy.spi.status.ProgressObject;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.onlytime.tomcat.deploy.DeploymentManagerImpl;
+
+import ru.onlytime.tomcat.deploy.DeploymentManagerImpl;
 
 public class OperationsTest
 {

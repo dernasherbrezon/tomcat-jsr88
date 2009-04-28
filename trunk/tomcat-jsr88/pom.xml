@@ -1,18 +1,32 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.onlytime.tomcat</groupId>
+    <groupId>ru.onlytime.tomcat</groupId>
     <artifactId>tomcat-jsr88</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
+    <url>http://code.google.com/p/tomcat-jsr88/</url>
+    <description>JSR-88 implementation for Tomcat</description>
 
-    <parent>
-        <groupId>com.svzn</groupId>
-        <artifactId>parent</artifactId>
-        <version>2</version>
-    </parent>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>http://code.google.com/p/tomcat-jsr88/source/browse/</url>
+    </scm>
 
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.4</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>javaee</groupId>
             <artifactId>javaee-api</artifactId>
@@ -27,7 +41,20 @@
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
+            <version>1.1</version>
             <exclusions>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>logkit</groupId>
+                    <artifactId>logkit</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>avalon-framework</groupId>
+                    <artifactId>avalon-framework</artifactId>
+                </exclusion>
                 <exclusion>
                     <groupId>log4j</groupId>
                     <artifactId>log4j</artifactId>
@@ -63,7 +90,7 @@
                     </descriptors>
                     <archive>
                         <manifestEntries>
-                            <J2EE-DeploymentFactory-Implementation-Class>org.onlytime.tomcat.deploy.DeploymentFactoryImpl</J2EE-DeploymentFactory-Implementation-Class>
+                            <J2EE-DeploymentFactory-Implementation-Class>ru.onlytime.tomcat.deploy.DeploymentFactoryImpl</J2EE-DeploymentFactory-Implementation-Class>
                         </manifestEntries>
                     </archive>
                 </configuration>

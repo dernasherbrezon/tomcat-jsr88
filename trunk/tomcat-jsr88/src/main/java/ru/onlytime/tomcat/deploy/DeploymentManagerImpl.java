@@ -1,4 +1,4 @@
-package org.onlytime.tomcat.deploy;
+package ru.onlytime.tomcat.deploy;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,10 +33,11 @@ import org.apache.commons.httpclient.methods.InputStreamRequestEntity;
 import org.apache.commons.httpclient.methods.PutMethod;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.onlytime.tomcat.deploy.spi.DeploymentStatusImpl;
-import org.onlytime.tomcat.deploy.spi.ProgressObjectImpl;
-import org.onlytime.tomcat.deploy.spi.TargetImpl;
-import org.onlytime.tomcat.deploy.spi.TargetModuleIDImpl;
+
+import ru.onlytime.tomcat.deploy.spi.DeploymentStatusImpl;
+import ru.onlytime.tomcat.deploy.spi.ProgressObjectImpl;
+import ru.onlytime.tomcat.deploy.spi.TargetImpl;
+import ru.onlytime.tomcat.deploy.spi.TargetModuleIDImpl;
 
 public class DeploymentManagerImpl implements DeploymentManager
 {
