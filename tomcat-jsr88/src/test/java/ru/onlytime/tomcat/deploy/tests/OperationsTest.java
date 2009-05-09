@@ -1,14 +1,21 @@
 package ru.onlytime.tomcat.deploy.tests;
 
+import javax.enterprise.deploy.spi.DeploymentManager;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import ru.onlytime.tomcat.deploy.DeploymentManagerImpl;
+import ru.onlytime.tomcat.deploy.DeploymentFactoryImpl;
 
 public class OperationsTest
 {
-	DeploymentManagerImpl manager;
+	DeploymentManager manager;
 
+	@Test
+	public void testMatchIP() throws Exception {
+		manager = new DeploymentFactoryImpl().getDeploymentManager("deployer:ru.onlytime.tomcat:192.168.1.2:8080", "1", "1");
+	}
+	
 	@Test
 	public void testAvailableModules() throws Exception
 	{

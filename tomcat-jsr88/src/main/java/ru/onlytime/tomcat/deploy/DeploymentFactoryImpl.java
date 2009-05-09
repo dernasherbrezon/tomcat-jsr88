@@ -10,7 +10,7 @@ import javax.enterprise.deploy.spi.factories.DeploymentFactory;
 public class DeploymentFactoryImpl implements DeploymentFactory
 {
 	private final static String URI_PREFIX = "deployer:ru.onlytime.tomcat:";
-	private final static Pattern appPattern = Pattern.compile(URI_PREFIX + "(\\w+):(\\d+)");
+	private final static Pattern appPattern = Pattern.compile(URI_PREFIX + "([\\w\\.]+):(\\d+)");
 
 	public DeploymentManager getDeploymentManager(String uri, String login, String password) throws DeploymentManagerCreationException
 	{
